@@ -91,7 +91,7 @@ class ReviewDelete(LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("reviews_list")
 
 
-class AcceptReview(UpdateView):
+class AcceptReview(LoginRequiredMixin, UpdateView):
     form_class = AcceptCommentForm
     model = Comment
     template_name = "accept_comment.html"
